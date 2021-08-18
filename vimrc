@@ -168,8 +168,23 @@ noremap B 5b
 " Ctrl + I or K will move up/down the view port without moving the cursor
 noremap <C-I> 5<C-y>
 noremap <C-K> 5<C-e>
-inoremap <C-I> <Esc>5<C-y>a
-inoremap <C-K> <Esc>5<C-e>a
+
+" ===
+" === Insert Mode Cursor Movement
+" ===
+inoremap <C-a> <ESC>A
+
+" ===
+" === Command Mode Cursor Movement
+" ===
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-w> <S-Right>
 
 " ===
 " === Window management
@@ -181,6 +196,7 @@ map <LEADER>i <C-w>k
 map <LEADER>k <C-w>j
 map <LEADER>j <C-w>h
 map <LEADER>l <C-w>l
+
 
 " Disabling the default s key
 " <nop> 禁用键盘映射
