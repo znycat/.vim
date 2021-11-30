@@ -141,22 +141,10 @@ map <LEADER>o o<Esc>u
 " ===
 " === Cursor Movement
 " ===
-" hjkl(原始)
-" New cursor movement (the default arrow keys are used for resizing windows)
-"     ^
-"     i
-" < j   l >
-"     k
-"     v
-noremap j h
-noremap i k
-noremap k j
-" noremap l l
-" I/K keys for 5 times i/k (faster navigation)
-noremap I 5k
-noremap K 5j
+noremap K 5k
+noremap J 5j
 " J key: go to the start of the line
-noremap J 0
+noremap H 0
 " L key: go to the end of the line
 noremap L $
 
@@ -165,9 +153,8 @@ noremap W 5w
 noremap B 5b
 " e 键 表示 'end of word'
 
-" Ctrl + I or K will move up/down the view port without moving the cursor
-noremap <C-I> 5<C-y>
-noremap <C-K> 5<C-e>
+noremap <C-K> 5<C-y>
+noremap <C-J> 5<C-e>
 
 " ===
 " === Insert Mode Cursor Movement
@@ -190,12 +177,6 @@ cnoremap <M-w> <S-Right>
 " === Window management
 " ===
 " ctrl+w jkli 在分屏间移动
-" Use <space> + new arrow keys for moving the cursor around windows
-map <LEADER>w <C-w>w
-map <LEADER>i <C-w>k
-map <LEADER>k <C-w>j
-map <LEADER>j <C-w>h
-map <LEADER>l <C-w>l
 
 
 " Disabling the default s key
@@ -209,9 +190,9 @@ noremap s <nop>
 " :vsplit    左右分屏
 " sl:e 文件	向右分屏到文件 sl:edit  
 map sl :set splitright<CR>:vsplit<CR>		"向右分屏
-map sj :set nosplitright<CR>:vsplit<CR>		"向左分屏
-map si :set nosplitbelow<CR>:split<CR>		"向上分屏
-map sk :set splitbelow<CR>:split<CR>		"向下分屏
+map sh :set nosplitright<CR>:vsplit<CR>		"向左分屏
+map sk :set nosplitbelow<CR>:split<CR>		"向上分屏
+map sj :set splitbelow<CR>:split<CR>		"向下分屏
 
 " Resize splits with arrow keys
 " 更改分屏大小 vertical resize-5 
@@ -233,12 +214,12 @@ noremap srv <C-w>b<C-w>H
 " === Tab management
 " ===
 " Create a new tab with ti
-map ti :tabe<CR>
+map tk :tabe<CR>
 " Move around tabs with tj and tl
-map tj :-tabnext<CR>
+map th :-tabnext<CR>
 map tl :+tabnext<CR>
 " Move the tabs with tmj and tml
-map tmj :-tabmove<CR>
+map tmh :-tabmove<CR>
 map tml :+tabmove<CR>
 
 
@@ -363,7 +344,7 @@ let NERDTreeOpenVSplit = ""
 let NERDTreeMapActivateNode = "l"
 let NERDTreeMapOpenInTab = ";"
 let NERDTreeMapPreview = ""
-let NERDTreeMapCloseDir = "j"
+let NERDTreeMapCloseDir = "h"
 let NERDTreeMapChangeRoot = "o"
 
 " ==
@@ -388,10 +369,10 @@ map <C-p> :CtrlP<CR>
 " ===
 " === CtrlP
 " ===
-let g:ctrlp_prompt_mappings = {
-  \ 'PrtSelectMove("j")':   ['<c-k>', '<down>'],
-  \ 'PrtSelectMove("k")':   ['<c-i>', '<up>'],
-  \ }
+" let g:ctrlp_prompt_mappings = {
+"   \ 'PrtSelectMove("j")':   ['<c-k>', '<down>'],
+"   \ 'PrtSelectMove("k")':   ['<c-i>', '<up>'],
+"   \ }
 
 
 
